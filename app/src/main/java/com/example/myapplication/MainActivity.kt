@@ -3,8 +3,10 @@ package com.example.myapplication
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
@@ -13,6 +15,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -37,6 +40,20 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String) {
+    Box(
+        modifier = Modifier.fillMaxSize()
+    ){
+        Canvas(modifier = Modifier){
+            drawCircle(Color.Blue, 50f, Offset(800f, 150f))
+        }
+    }
+    Box(
+        modifier = Modifier.fillMaxSize()
+    ){
+        Canvas(modifier = Modifier){
+            drawCircle(Color.Blue, 50f, Offset(1800f, 950f))
+        }
+    }
     Text(text = "$name")
     Image(
         painter = painterResource(id = R.drawable.map),
